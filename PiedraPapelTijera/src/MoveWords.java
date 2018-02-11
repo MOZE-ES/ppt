@@ -64,8 +64,6 @@ public class MoveWords{
 
 	    first_i = getIndex(first);
 	    second_i = getIndex(second);
-	    System.out.println("LO QUE YO ELIGO: "+first_i);
-	    System.out.println("EL RANDOM: "+second_i);
 	    
 	    if (first_i == second_i) return EMPATE;
 	    
