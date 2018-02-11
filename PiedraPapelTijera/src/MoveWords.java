@@ -6,7 +6,7 @@ public class MoveWords{
     public static final int GANA = 1;
     public static final int PIERDE = 2;
 
-    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA"};
+    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTIJA", "SPOCK"};
     private static final String[] validCommands = {"SALIR", "HELP"};
 
     private Random rnd;
@@ -64,10 +64,44 @@ public class MoveWords{
 
 	    first_i = getIndex(first);
 	    second_i = getIndex(second);
-
+	    System.out.println("LO QUE YO ELIGO: "+first_i);
+	    System.out.println("EL RANDOM: "+second_i);
+	    
 	    if (first_i == second_i) return EMPATE;
 	    
-	    return (( (first_i +1) % validMoves.length ) == second_i ) ? GANA: PIERDE;
+	    //Si el usuario elige Tijeras y sale Piedra
+	    if(first_i == 0 && second_i == 2){return PIERDE;}
+	    
+	    //Si el usuario elige Tijeras y sale Lagartija
+	    if(first_i == 0 && second_i == 3){ return GANA;}
+	    
+	    //Si el usuario elige Papel y sale Spock
+	    if(first_i == 1 && second_i == 4){ return GANA;}
+	    
+	    //Si el usuario elige Papel y sale Lagartija
+	    if(first_i == 1 && second_i == 3){ return PIERDE;}
+	    
+	    //Si el usuario elige Piedra y sale Tijeras
+	    if(first_i == 2 && second_i == 0){ return GANA;}
+	    
+	    //Si el usuario elige Piedra y sale Spock
+	    if(first_i == 2 && second_i == 4){ return PIERDE;}
+	    
+	    //Si el usuario elige Lagartija y sale Papel
+	    if(first_i == 3 && second_i == 1){ return GANA;}
+	    
+	    //Si el usuario elige Lagartija y sale Tijeras
+	    if(first_i == 3 && second_i == 0){ return PIERDE;}
+	    
+	    //Si el usuario elige Spock y sale Papel
+	    if(first_i == 4 && second_i == 1){ return PIERDE;}
+	    
+	    //Si el usuario elige Spock y sale Piedra
+	    if(first_i == 4 && second_i == 2){ return GANA;}
+	    //Si no es ninguno anterior:
+	    else {
+	    	return (( (first_i +1) % validMoves.length ) == second_i ) ? GANA: PIERDE;
+	    }
 	}
 	
 } 
