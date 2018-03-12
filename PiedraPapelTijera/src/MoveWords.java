@@ -6,7 +6,7 @@ public class MoveWords{
     public static final int GANA = 1;
     public static final int PIERDE = 2;
 
-    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTIJA", "SPOCK"};
+    private static final String[] validMoves = {"TIJERAS", "PAPEL", "PIEDRA", "LAGARTIJA", "TORITO"};
     private static final String[] validCommands = {"SALIR", "HELP"};
 
     private Random rnd;
@@ -73,7 +73,7 @@ public class MoveWords{
 	    //Si el usuario elige Tijeras y sale Lagartija
 	    if(first_i == 0 && second_i == 3){ return GANA;}
 	    
-	    //Si el usuario elige Papel y sale Spock
+	    //Si el usuario elige Papel y sale Torito
 	    if(first_i == 1 && second_i == 4){ return GANA;}
 	    
 	    //Si el usuario elige Papel y sale Lagartija
@@ -82,7 +82,7 @@ public class MoveWords{
 	    //Si el usuario elige Piedra y sale Tijeras
 	    if(first_i == 2 && second_i == 0){ return GANA;}
 	    
-	    //Si el usuario elige Piedra y sale Spock
+	    //Si el usuario elige Piedra y sale Torito
 	    if(first_i == 2 && second_i == 4){ return PIERDE;}
 	    
 	    //Si el usuario elige Lagartija y sale Papel
@@ -91,10 +91,10 @@ public class MoveWords{
 	    //Si el usuario elige Lagartija y sale Tijeras
 	    if(first_i == 3 && second_i == 0){ return PIERDE;}
 	    
-	    //Si el usuario elige Spock y sale Papel
+	    //Si el usuario elige Torito y sale Papel
 	    if(first_i == 4 && second_i == 1){ return PIERDE;}
 	    
-	    //Si el usuario elige Spock y sale Piedra
+	    //Si el usuario elige Torito y sale Piedra
 	    if(first_i == 4 && second_i == 2){ return GANA;}
 	    //Si no es ninguno anterior:
 	    else {
